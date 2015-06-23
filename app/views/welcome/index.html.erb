@@ -1,0 +1,149 @@
+<div class="top clearfix">
+  <div class="top-inner">
+    <div class="logo left"></div>
+    <div class="right">
+      <dl>
+        <dt>
+          <a >加入收藏 |</a>
+          <a >设为首页</a>
+        </dt>
+        <dd>
+          <a >HOME|</a>
+          <a >CHINESE|</a>
+          <a >ENGLISH</a>
+        </dd>
+      </dl>
+    </div>
+  </div>
+</div>
+<div class="nav">
+  <div class="nav-inner">
+    <ul>
+      <li class="active">
+        <a href="">首页</a>
+      </li>
+      <li>
+        <a href="">关于鼎晖</a>
+      </li>
+      <li>
+        <a href="">企业动态</a>
+      </li>
+      <li>
+        <a href="">公司业务</a>
+      </li>
+      <li>
+        <a href="">人才招聘</a>
+      </li>
+      <li>
+        <a href="">联系方式</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="banner">
+  <div class="banner-inner">
+    <div class="btn clearfix">
+      <ul></ul>
+    </div>
+  </div>
+  <div class="pic pic1 none"></div>
+  <div class="pic pic2 none"></div>
+  <div class="pic pic3 none"></div>
+  <div class="pic pic4 none"></div>
+</div>
+<div class="content">
+  <h3 class="clearfix">
+    关于我们 <span>ABOUT US</span>
+    <a class="right" href="">查看全部>></a>
+  </h3>
+  <div class="clearfix">
+    <div class="content-l left">
+      <h2>诚信、专业、创新、共赢</h2>
+      <p>
+        鼎晖租赁是经国家商务部审批设立的外资融资租赁公司。公司成立于 2015 年 3 月，注册地在深圳市前海深港合作区，注册资本 5000 万美元，股东为香港鑫隆平工业有限公司。公司总部设在深圳，北京设立分公司。
+        鼎晖租赁秉承"诚信、专业、创新、共赢"的经营理念，建立了完备的公司治理结构和内部管理机制。公司专注于大型央企、国企的融资租赁业务，通过国内外资本市场运作为合作伙伴提供全面的融资服务。
+        随着公司发展，我们将不断扩大融资租赁业务范围，积极创新业务模式，持续提升核心竞争力，力争把鼎晖打造成为国内一流的融资租赁公司。
+
+      </p>
+    </div>
+    <div class="content-r left">
+      <img src="<%= image_url 'pic_12.jpg' %>" width="281" height="178">
+    </div>
+  </div>
+  <h3 class="clearfix">
+    联系我们 <span>CONTANT US</span>
+  </h3>
+  <div class="adress">
+    <p>电话：010-59856788</p>
+    <p>网址：www.dinghuifl.com</p>
+    <p>地址：北京市朝阳区公园路19号加隆国际大厦A座15F</p>
+  </div>
+</div>
+<div class="footer">
+  <div class="line"></div>
+  <div class="f-b">
+    <p>Copyright© 深圳鼎晖融资租赁 有限责任公司.ALL Rights Reserved. Powered By www.dinghuifl.com</p>
+    <p>电话：010-59856788</p>
+    <p>地址：北京市朝阳区公园路19号佳隆国际大厦a座15F</p>
+  </div>
+</div>
+<script type="text/javascript">
+  $(function () {
+
+    var DH = {},
+      num = -1,
+      timer;
+    DH.fn ={
+      max : $('.pic').length,
+      scrollInt : function () {
+        DH.fn.creatBtn();
+        DH.fn.autoScroll();
+        DH.fn.hover();
+      },
+      creatBtn : function () {
+        var length = DH.fn.max;
+        var dom = '';
+        for (var i = 0; i < length; i++) {
+          dom += '<li></li>';
+        }
+        $('.btn ul').append(dom);
+      },
+      autoScroll : function () {
+        num ++;
+        if (num + 1> DH.fn.max) {
+          clearTimeout(timer);
+          num = 0;
+          $('.pic').fadeOut(800);
+          $('.pic').eq(num).fadeIn(800);
+          $('.btn li').removeClass('active');
+          $('.btn li').eq(num).addClass('active');
+          timer = setTimeout( arguments.callee, 5000);
+          return;
+        };
+        $('.pic').fadeOut(800);
+        $('.pic').eq(num).fadeIn(800);
+        $('.btn li').removeClass('active');
+        $('.btn li').eq(num).addClass('active');
+        timer = setTimeout( arguments.callee, 5000);
+      },
+      hover : function () {
+        var index;
+        $('.btn li').hover(function () {
+          clearTimeout(timer);
+          var index = $(this).index();
+          num = index;
+          $('.pic').fadeOut(800);
+          $('.pic').eq(index).fadeIn(800);
+          $('.btn li').removeClass('active');
+          $('.btn li').eq(index).addClass('active');
+        }, function () {
+          clearTimeout(timer);
+          timer = setTimeout( DH.fn.autoScroll, 5000);
+        });
+      }
+    }
+
+    DH.fn.scrollInt();
+    
+  });
+</script>
