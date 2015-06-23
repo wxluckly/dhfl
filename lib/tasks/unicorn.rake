@@ -5,6 +5,8 @@ namespace :unicorn do
     old_pid = File.expand_path('../../../tmp/pids/unicorn.pid', __FILE__)
     Process.kill("QUIT", File.read(old_pid).to_i)
     p "unicorn stoped"
+  rescue
+    p "no unicorn"
   end
 
   desc "start unicorn"
