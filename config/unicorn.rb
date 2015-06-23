@@ -27,7 +27,7 @@ working_directory app
 # listen on both a Unix domain socket and a TCP port,
 # we use a shorter backlog for quicker failover when busy
 listen "#{app}/tmp/sockets/unicorn.sock", :backlog => 1024
-listen '127.0.0.1:3000', tcp_nopush: false, tcp_nodelay: true
+listen '127.0.0.1:3001', tcp_nopush: false, tcp_nodelay: true
 
 # nuke workers after 30 seconds instead of 60 seconds (the default)
 timeout 180
