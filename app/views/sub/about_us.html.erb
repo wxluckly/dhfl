@@ -1,0 +1,64 @@
+<style type="text/css">
+  .banner{
+    width: 100%;
+    height: 311px;
+    background-image: url("<%= image_url 'about_banner_02.jpg' %>");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .path{
+    padding-left: 13px;
+    font-size: 12px;
+    height: 51px;
+    line-height: 74px;
+    overflow: hidden;
+    border-bottom: 1px solid #f06b6c;
+    color: #6d6d6d;
+  }
+  .content dl{
+    padding-top: 20px;
+  }
+  .content dt{
+    width: 380px;
+  }
+  .content dd {
+    width: 590px;
+    margin-left: -14px;
+  }
+  .content dd h3{
+    margin-bottom: 7px;
+    width: 200px;
+    height: 37px;
+    background:url("<%= image_url 'about_title_05.jpg' %>") no-repeat;
+    border-bottom: 0;
+  }
+  .content dd p{
+    text-indent: 2em;
+    font-size: 12px;
+    line-height: 27px;
+    color: #7b7b7b;
+  }
+</style>
+<%= render 'top' %>
+<%= render 'nav' %>
+<div class="banner"></div>
+<div class="content">
+  <div class="path">
+    您现在的位置:首页>关于鼎晖
+  </div>
+  <div class="content-inner">
+    <dl class="clearfix">
+      <dt class="left">
+        <%= image_tag 'about_l_05.jpg', width: '380', height: '249' %>
+      </dt>
+      <dd class="left">
+        <h3></h3>
+        <p>鼎晖租赁是经国家商务部审批设立的外资融资租赁公司。公司成立于 2015 年 3 月，注册地在深圳市前海深港合作区，注册资本 5000 万美元，股东为香港鑫隆平工业有限公司。公司总部设在深圳，北京设立分公司。</p>
+        <p>鼎晖租赁秉承"诚信、专业、创新、共赢"的经营理念，建立了完备的公司治理结构和内部管理机制。公司专注于大型央企、国企的融资租赁业务，通过国内外资本市场运作为合作伙伴提供全面的融资服务。</p>
+        <p>随着公司发展，我们将不断扩大融资租赁业务范围，积极创新业务模式，持续提升核心竞争力，力争把鼎晖打造成为国内一流的融资租赁公司。</p>
+      </dd>
+    </dl>
+  </div>
+</div>
+<%= render 'footer' %>

@@ -1,0 +1,71 @@
+<style type="text/css">
+  .banner{
+    width: 100%;
+    height: 311px;
+    background-image: url("<%= image_url 'about_banner_02.jpg' %>");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .path{
+    padding-left: 13px;
+    font-size: 12px;
+    height: 51px;
+    line-height: 74px;
+    overflow: hidden;
+    border-bottom: 1px solid #f06b6c;
+    color: #6d6d6d;
+  }
+  .content-inner{
+    padding-top: 20px;
+  }
+  .content-inner .c-l{
+    padding-left: 93px;
+    width: 385px;
+  }
+  .c-l,.c-r{
+    float: left;
+  }
+  .c-l{
+    height: 262px;
+    background:url("<%= image_url 'tel_03.png' %>") no-repeat 18px 20px;
+  }
+  .c-l h3{
+    height: 34px;
+    font-size: 16px;
+    color: #d4192e;
+    border-bottom: 0;
+  }
+  .c-l h3 span{
+    color: #5b5b5b;
+  }
+  .c-l p{
+    line-height: 29px;
+    font-size: 12px;
+    color: #797979;
+    font-family: "simsun";
+  }
+  .c-r{
+    width: 440px;
+    height: 212px;
+    border:1px solid #c1cbc3;
+  }
+</style>
+<%= render 'top' %>
+<%= render 'nav' %>
+<div class="banner"></div>
+<div class="content">
+  <div class="path">
+    您现在的位置:首页>联系方式
+  </div>
+  <div class="content-inner clearfix">
+    <div class="c-l">
+      <h3>联系我们 <span>CONTANT US</span></h3>
+      <p>电话：010-5985 6788</p>
+      <p>网址：www.dinghuifl.com</p>
+      <p>地址：北京市朝阳区朝阳公园路19号佳隆国际大厦A座15F</p>
+    </div>
+    <div class="c-r"></div>
+  </div>
+</div>
+<%= render 'footer' %>
