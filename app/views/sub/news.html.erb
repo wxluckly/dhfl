@@ -1,0 +1,43 @@
+<style type="text/css">
+  .banner{
+    background-image:url("<%= image_url 'news_banner_02.jpg' %>");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .content ul li {
+    padding-left: 45px;
+    line-height: 45px;
+    height: 45px;
+    border-bottom: 1px solid #dbdbdb;
+    background: url("<%= image_url 'sanjiao_05.png' %>") no-repeat 14px 18px;
+  }
+  ul li a{
+    color: #0e0100;
+  }
+  .news{
+    height: 200px;
+    line-height: 200px;
+    text-align: center;
+    color: #999;
+  }
+</style>
+
+<%= render 'top' %>
+<%= render 'nav' %>
+<div class="banner"></div>
+
+<div class="content">
+  <div class="path">
+    您现在的位置:首页>企业动态
+  </div>
+  <!-- <ul>
+    <li><a href="" target="_blank">我是条新闻</a></li>
+    <li><a href="" target="_blank">我是条新闻</a></li>
+  </ul> -->
+  <div class="news">
+    暂无动态
+  </div>
+</div>
+
+<%= render 'footer' %>

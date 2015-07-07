@@ -1,22 +1,22 @@
 <div class="nav">
   <div class="nav-inner">
     <ul>
-      <li class="active">
+      <li <% if current_page?(controller: 'welcome', action: 'index') %>class="active"<% end %>>
         <a href="/">首页</a>
       </li>
-      <li>
+      <li <% if current_page?(controller: 'sub', action: 'about_us') %>class="active"<% end %>>
         <a href="/sub/about_us">关于鼎晖</a>
       </li>
-      <li>
-        <a href="/news">企业动态</a>
+      <li <% if current_page?(controller: 'sub', action: 'news') %>class="active"<% end %>>
+        <a href="/sub/news">企业动态</a>
       </li>
-      <li>
+      <li <% if current_page?(controller: 'sub', action: 'business') %>class="active"<% end %>>
         <a href="/sub/business">公司业务</a>
       </li>
-      <li>
+      <li <% if current_page?(controller: 'sub', action: 'jobs') %>class="active"<% end %>>
         <a href="/sub/jobs">人才招聘</a>
       </li>
-      <li>
+      <li <% if current_page?(controller: 'sub', action: 'contact') %>class="active"<% end %>>
         <a href="/sub/contact">联系方式</a>
       </li>
     </ul>
