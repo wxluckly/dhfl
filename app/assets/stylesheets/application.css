@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require reset
+ *= require comm
  *= require index
  *= require_self
  */
