@@ -1,0 +1,74 @@
+<style type="text/css">
+  .banner{
+    width: 100%;
+    height: 311px;
+    background-image: url("<%= image_url 'b_banner_02.jpg' %>");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .path{
+    padding-left: 13px;
+    font-size: 12px;
+    height: 51px;
+    line-height: 74px;
+    overflow: hidden;
+    border-bottom: 1px solid #f06b6c;
+    color: #6d6d6d;
+  }
+  .content{
+    color: #787878;
+    font-size: 12px;
+
+  }
+  .content-inner{
+    padding-top: 22px;
+    padding-bottom: 54px;
+    padding-left: 13px;
+
+  }
+  .content dt{
+    padding-top: 14px;
+    height: 20px;
+    font-weight: bold;
+  }
+  .content dd{
+    line-height: 30px;
+    font-family: "simsun";
+  }
+</style>
+<%= render 'top' %>
+<%= render 'nav' %>
+<div class="banner"></div>
+<div class="content">
+  <div class="path">
+    您现在的位置:首页>公司业务
+  </div>
+  <div class="content-inner">
+    <dl>
+      <dt>直接租赁</dt>
+      <dd>由承租人指定设备及生产厂家，委托出租人融通资金购买并提供设备，由承租人使用并支付租金，租赁期满由出租人向承租人转移设备所有权的一种租赁形式。这是一种最典型的融资租赁方式。</dd>
+    </dl>
+    <dl>
+      <dt>售后回租</dt>
+      <dd>承租人将自有设备的所有权转让给租赁公司以融入资金；同时通过与租赁公司签订回租合同，将设备租回使用，在租赁期内按期向租赁公司支付租金；并最终于租赁结束时重新获得设备所有权的一种融资性租赁业务模式。</dd>
+    </dl>
+    <dl>
+      <dt>委托租赁</dt>
+      <dd>租赁公司接受委托人的资金或租赁标的物，根据委托人的书面委托，向委托人指定的承租人办理融资租赁的业务。</dd>
+    </dl>
+    <dl>
+      <dt>杠杆租赁</dt>
+      <dd>租赁公司以承租人指定的设备作抵押，向银行等金融机构贷款，然后购买设备出租给承租人的租赁方式。杠杆租赁特点是租赁公司一般只提供购买机器设备所需资金的20%-40%，其余资金通过将出租物设定抵押担保而向银行贷款来获得，租赁公司收取的租金里包括了应当支 的银行贷款利息 。杠杆租赁扩大了租赁公司的经营能力，—般适用于诸如飞机、轮船等大型成套生产设备及大型工程项目。</dd>
+    </dl>
+    <dl>
+      <dt>转租赁</dt>
+      <dd>以同一物件为标的物的多次融资租赁业务。在转租赁业务中，上一租赁合同的承租人同时又是下一租赁合同的出租人，称为转租人。转租人向其他出租人租入租赁物件再转租给第三人，转租人以收取租金差为目的。租赁物品的所有权归第一出租人。</dd>
+    </dl>
+    <dl>
+      <dt>联合租赁:</dt>
+      <dd>由两家或两家以上具有融资租赁资质的租赁公司对同一项目提供融资租赁的业务模式。该模式由一家租赁公司作为牵头人，与其他国内或国际具有融资租赁资质的租赁公司共同设计、运作、完成融资项目</dd>
+    </dl>
+  </div>
+</div>
+<%= render 'footer' %>
