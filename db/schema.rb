@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150728154607) do
+ActiveRecord::Schema.define(version: 20150729150155) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title",       limit: 255
@@ -30,6 +30,17 @@ ActiveRecord::Schema.define(version: 20150728154607) do
     t.integer  "sort",       limit: 4
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+  end
+
+  create_table "crawler_articles", force: :cascade do |t|
+    t.string   "title",      limit: 255
+    t.string   "url",        limit: 255
+    t.string   "source",     limit: 255
+    t.string   "type",       limit: 255
+    t.text     "content",    limit: 65535
+    t.integer  "article_id", limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
 end

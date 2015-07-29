@@ -1,6 +1,6 @@
 class Admin::ArticlesController < Admin::BaseController
   def index
-    @articles = Article.where(category_id: params[:category_id] || 1).paginate(page: params[:page], per_page: 1)
+    @articles = Article.where(category_id: params[:category_id] || 1).paginate(page: params[:page], per_page: 25)
   end
 
   def new
