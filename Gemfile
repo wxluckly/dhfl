@@ -1,6 +1,7 @@
 # source 'https://rubygems.org'
 source 'https://ruby.taobao.org'
 
+gem 'nokogiri'
 gem 'annotate'
 #翻页
 gem 'will_paginate-bootstrap', '0.2.5'

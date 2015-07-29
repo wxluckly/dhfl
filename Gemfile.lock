@@ -199,6 +199,7 @@ DEPENDENCIES
   jquery-rails
   mini_magick
   mysql2
+  nokogiri
   pry
   pry-nav
   pry-rails
