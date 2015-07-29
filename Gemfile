@@ -1,6 +1,23 @@
 # source 'https://rubygems.org'
 source 'https://ruby.taobao.org'
 
+gem 'annotate'
+#翻页
+gem 'will_paginate-bootstrap', '0.2.5'
+gem 'will_paginate'
+#编辑器
+gem 'rails_kindeditor'
+#upload
+gem 'carrierwave'
+gem 'mini_magick'
+#认证
+gem 'devise'
+gem 'cancan'
+gem 'rolify'
+gem 'pry'
+gem 'pry-nav'
+gem 'pry-rails'
+gem 'mysql2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use sqlite3 as the database for Active Record
@@ -42,4 +59,3 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-

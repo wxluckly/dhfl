@@ -6,4 +6,9 @@ Rails.application.routes.draw do
     get :about_us, :business, :contact, :news, :jobs
   end
 
+  namespace :admin do
+    resources :articles
+    resources :categories
+  end
+
 end
