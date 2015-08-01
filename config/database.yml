@@ -1,9 +1,0 @@
-
-
-development: &development
-  adapter: mysql2
-  encoding: utf8
-  database: dh
-  username: root
-  password: nicai
-  timeout: 3000
