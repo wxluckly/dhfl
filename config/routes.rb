@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-
+  devise_for :users
   root 'welcome#index'
+  # require 'resque/server'
 
+  # mount Resque::Server.new, at: "/resque"
+  get '/sub/news/:id', to: 'sub#show'
   namespace :sub do
     get :about_us, :business, :contact, :news, :jobs
   end

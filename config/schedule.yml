@@ -1,0 +1,5 @@
+crawler_netease:
+  cron: "*/1 * * * *"
+  class: CrawlerNeteaseJob
+  queue: default
+  description: "crawler_netease"

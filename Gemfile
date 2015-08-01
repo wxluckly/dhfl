@@ -1,6 +1,11 @@
 # source 'https://rubygems.org'
 source 'https://ruby.taobao.org'
 
+
+gem 'redis-objects'
+gem 'resque'
+gem 'resque-scheduler'
+
 gem 'nokogiri'
 gem 'annotate'
 #翻页

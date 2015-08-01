@@ -1,7 +1,7 @@
 class Crawler::Article::NetEase < Crawler::Article
   def self.get_article_urls
     signal = ""
-    1.upto 10 do |page_num|
+    1.upto 3 do |page_num|
       if page_num == 1
         page_url = 'http://money.163.com/special/00253368/institutions.html'
       else

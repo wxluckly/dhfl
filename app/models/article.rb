@@ -15,4 +15,5 @@
 class Article < ActiveRecord::Base
   belongs_to :category
   has_one :crawler_article, class_name: "Crawler::Article"
+
 end
