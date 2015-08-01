@@ -19,3 +19,7 @@ config/initializers/devise.rb
 /log/*
 !/log/.keep
 /tmp
+public/assets/*
+tmp/*
+log/*
+/db/*.sqlite3
