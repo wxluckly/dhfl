@@ -1,19 +1,9 @@
 <%= render 'top' %>
 <%= render 'nav' %>
-<div class="banner"></div>
+<div class="banner banner-news"></div>
 
 <div class="content">
-  <div class="path">
-    您现在的位置:首页>企业动态
-  </div>
-  <div class="fenlei">
-    <li <% if current_page?("/sub/news?category=2") %>class="active"<% end %>>
-      <a href="/sub/news?category=2">行业动态</a>
-    </li>
-    <li <% if current_page?("/sub/news?category=1") %>class="active"<% end %>>
-      <a href="/sub/news?category=1">公司动态</a>
-    </li>
-  </div>
+  <%= render 'left' %>
   <div class="wenzhang">
     <div class="wenzhang title">
       <h1><%= @article.title%></h1>

@@ -104,6 +104,10 @@
   width: 970px;
   padding-top: 18px;
   padding-bottom: 38px;
+  height: auto;
+}
+.content-news {
+  height: 435px;
 }
 
 .content h3 {
@@ -111,7 +115,7 @@
   line-height: 30px;
   font-size: 16px;
   color: #d0345c;
-  border-bottom: 1px solid #ef6c74;
+  /*border-bottom: 1px solid #ef6c74;*/
 }
 
 .content h3 span {
@@ -222,18 +226,31 @@
 }
 
 .banner {
-  background-image: url("<%= image_url 'news_banner_02.jpg' %>");
+  /*background-image: url("<%= image_url 'news_banner_02.jpg' %>");*/
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+.banner-news {
+  background-image: url("<%= image_url 'news_banner_02.jpg' %>");
+}
 
-.content ul li {
-  padding-left: 45px;
-  line-height: 45px;
-  height: 45px;
+.right-liebiao {
+  padding-left: 40px;
+  width: 680px;
+}
+
+.right-liebiao ul li {
+  padding-left: 36px;
+  line-height: 36px;
+  height: 36px;
   border-bottom: 1px solid #dbdbdb;
   background: url("<%= image_url 'sanjiao_05.png' %>") no-repeat 14px 18px;
+
+}
+.right-liebiao ul li a{
+  color: #858585;
+  font-size: 15px;
 }
 
 ul li a {
@@ -272,36 +289,45 @@ ul li a {
 }
 
 .fenlei {
-  margin-top: 13px;
-  width: 200px;
+  /*padding-top: 13px;*/
+  width: 236px;
+  height: 405px;
   float: left;
 	list-style-type: none;
 	border-left: 10px;
+  background-image: url("<%= image_url 'fenlei-left.jpg' %>");
+  border-right: 10px;
 }
 
-.fenlei li a {
-  margin: 0 10px;
+.fenlei-liebiao {
+  padding-top: 10px;
+}
+.fenlei-liebiao li {
+  border-bottom: 1px solid rgb(218,214,221);
+  padding-left: 15px;
+  line-height: 30px;
+}
+.fenlei-liebiao li a {
+  background: url("<%= image_url 'fenlei-sanjiao.jpg' %>") no-repeat 0px 3px;
+  margin: 0 20px;
   padding: 0 20px;
-  border-bottom: 1px dotted #818181;
-  line-height: 48px;
+  /*border-bottom: 1px dotted #818181;*/
   text-align: center;
 	color: black;
 }
-.fenlei li a:hover{
+.fenlei-liebiao li a:hover{
 	color: red;
 }
 
-.active{
-	font-size: 18px;
-}
-.active a{
-	color: #8e8e8e;
+.fenlei .active{
+  background: url("<%= image_url 'fenlei-left-deep.jpg' %>") 0 0 repeat;
+  opacity: 0.8;
 }
 
 .liebiao {
   height: 280px;
   width: auto;
-  margin-left: 200px;
+  padding-left: 200px;
 }
 
 .time {
@@ -312,6 +338,7 @@ ul li a {
 }
 .wenzhang {
   overflow: hidden;
+  padding-left: 20px;
 }
 .wenzhang .title {
   border-bottom: 1px dotted #9c9c9c;
@@ -319,12 +346,14 @@ ul li a {
   padding-bottom: 15px;
 }
 .wenzhang .info {
+  text-align: center;
   padding-top: 10px;
   color: #8e8e8e;
   font-size: 12px;
 }
 .wenzhang span {
-  float: right;
+  /*float: right;*/
+  padding-left: 80px;
   color: #8e8e8e;
 }
 .wenzhang .content {
@@ -344,3 +373,32 @@ ul li a {
 	margin-left: -12px;
 }
 #allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+
+.title-back {
+  height: 38px;
+  background: #da2d2d
+}
+.title-back h3 {
+  font-size: 16px;
+  color: white;
+  padding-left: 30px;
+  padding-top: 6px;
+}
+.left-about-us {
+  padding-top: 10px;
+  padding-left: 35px;
+  height: 155px;
+}
+.left-about-us p {
+  font-size: 13px;
+  line-height: 30px;
+  /*color: #858585;*/
+  font-family:"微软雅黑";
+}

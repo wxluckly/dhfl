@@ -13,7 +13,7 @@ class SubController < ApplicationController
   end
 
   def news
-    @articles = Article.where(category_id: params[:category] || 2).order('id desc').paginate(page: params[:page], per_page: 6)
+    @articles = Article.where(category_id: params[:category] || 2).order('id desc').paginate(page: params[:page], per_page: 10)
   end
 
   def show
