@@ -13,7 +13,15 @@
 #
 
 class Article < ActiveRecord::Base
+  include CleanHtml
+
   belongs_to :category
   has_one :crawler_article, class_name: "Crawler::Article"
+
+  after_create :set_font
+
+  def set_font
+    self.update(content: (clean_html content))
+  end
 
 end

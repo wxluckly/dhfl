@@ -15,8 +15,6 @@ module CleanHtml
     str = str.encode('utf-8')
     str = strip_links str
     str = rm_tag str
-    str = rm_word str
-    str = re_word str
     str = join_html_str str
     str
   end
