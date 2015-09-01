@@ -38,6 +38,14 @@ class Admin::ArticlesController < Admin::BaseController
     end
   end
 
+  def crawler
+    Crawler::Article::NetEase.get_article_urls
+    articles = Crawler::Article::NetEase.where(article_id: nil)
+    articles.each {|a| a.get_content}
+    redirect_to :back
+    # render json: {msg: "爬虫#{articles.size}篇文章"}
+  end
+
   private
   def article_params
     params.require(:article).permit(:title, :content, :author, :source, :category_id)

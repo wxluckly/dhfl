@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :articles
+    resources :articles do
+      get :crawler, on: :collection
+    end
     resources :categories
   end
 

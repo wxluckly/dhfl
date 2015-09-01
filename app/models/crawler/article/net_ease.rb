@@ -1,21 +1,15 @@
 class Crawler::Article::NetEase < Crawler::Article
   def self.get_article_urls
-    signal = ""
-    1.upto 3 do |page_num|
-      if page_num == 1
-        page_url = 'http://money.163.com/special/00253368/institutions.html'
-      else
-        page_url = "http://money.163.com/special/00253368/institutions_0#{page_num}.html"
+    count = 0
+    page_url = 'http://money.163.com/special/00253368/institutions.html'
+    Nokogiri::HTML(open(page_url), nil, "GB18030").css(".area .colLM .newsList li").each do |li|
+      url = li.css("a").attr("href").to_s rescue nil
+      count += 1
+      if self.find_by(url: url) or count > 5
+        break
       end
-      Nokogiri::HTML(open(page_url), nil, "GB18030").css(".area .colLM .newsList li").each do |li|
-        url = li.css("a").attr("href").to_s rescue nil
-        if self.find_by(url: url)
-          signal = "break" and break
-        end
-        title = li.css("a").text
-        self.create(url: url, title: title)
-      end
-      break if signal == 'break'
+      title = li.css("a").text
+      self.create(url: url, title: title)
     end
   end
 

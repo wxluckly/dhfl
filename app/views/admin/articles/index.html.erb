@@ -6,6 +6,7 @@
 
   <div class="span3 pull-right">
     <%= link_to '新增', new_admin_article_path(category_id: params[:category_id]), class: 'pull-right btn btn-warning','data-no-turbolink' => true %>
+    <%= link_to '爬虫', crawler_admin_articles_path, class: 'pull-right btn btn-info', style: 'margin-right: 20px;'%>
   </div>
 
   <div class="span12">
