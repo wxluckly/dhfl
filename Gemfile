@@ -1,7 +1,7 @@
 # source 'https://rubygems.org'
 source 'https://ruby.taobao.org'
 
-
+gem 'pg'
 gem 'redis-objects'
 gem 'resque'
 gem 'resque-scheduler'
