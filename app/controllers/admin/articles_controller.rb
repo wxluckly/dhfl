@@ -22,7 +22,7 @@ class Admin::ArticlesController < Admin::BaseController
 
   def update
     @article = Article.find(params[:id])
-    if @article.save
+    if @article.update(article_params)
       redirect_to admin_articles_path
     else
       render 'edit'
@@ -40,7 +40,8 @@ class Admin::ArticlesController < Admin::BaseController
 
   def crawler
     Crawler::Article::NetEase.get_article_urls
-    articles = Crawler::Article::NetEase.where(article_id: nil)
+    Crawler::Article::ChinaVenture.get_article_urls
+    articles = Crawler::Article.where(article_id: nil)
     articles.each {|a| a.get_content}
     redirect_to :back
     # render json: {msg: "爬虫#{articles.size}篇文章"}
