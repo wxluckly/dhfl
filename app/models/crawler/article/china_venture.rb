@@ -14,7 +14,7 @@ class Crawler::Article::ChinaVenture < Crawler::Article
   end
 
   def get_content
-    content = Nokogiri::HTML(open(url),nil,"GB2312").css(".articon p").to_s
+    content = Nokogiri::HTML(open(url),nil,"GB18030").css(".articon p").to_s
     save_article(2 ,content: content) if content.present?
   end
 end
