@@ -41,6 +41,7 @@ class Admin::ArticlesController < Admin::BaseController
   def crawler
     Crawler::Article::NetEase.get_article_urls
     Crawler::Article::ChinaVenture.get_article_urls
+    Crawler::Article::Flleasing.get_article_urls
     articles = Crawler::Article.where(article_id: nil)
     articles.each {|a| a.get_content}
     redirect_to :back
