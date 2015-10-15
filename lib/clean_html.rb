@@ -16,6 +16,7 @@ module CleanHtml
     str = strip_links str
     str = rm_tag str
     str = join_html_str str
+    str = rm_word str
     str
   end
 
@@ -105,6 +106,12 @@ module CleanHtml
       end
     end
     result
+  end
+
+  def rm_word str
+    words = %w(巨潮资讯网（www.cninfo.com.cn）)
+    words.each{ |word| str.gsub!(word, "") }
+    str
   end
 
 end
