@@ -16,7 +16,10 @@ class Crawler::Article::Flleasing < Crawler::Article
   def get_content
     content = Nokogiri::HTML(open(url),nil,"GB2312").css(".NewsContent").to_s
     if Nokogiri::HTML(open(url),nil,"GB2312").css("#BodyLabel p a").present?
+      url_list = []
       Nokogiri::HTML(open(url),nil,"GB2312").css("#BodyLabel p a").each do |a|
+        next if url_list.include? a.attr('href')
+        url_list << a.attr('href')
         content << Nokogiri::HTML(open("http://www.flleasing.com/onews.asp#{a.attr('href')}"),nil,"GB2312").css(".NewsContent").to_s
       end
     end
