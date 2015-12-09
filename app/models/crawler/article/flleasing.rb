@@ -23,6 +23,6 @@ class Crawler::Article::Flleasing < Crawler::Article
         content << Nokogiri::HTML(open("http://www.flleasing.com/onews.asp#{a.attr('href')}"),nil,"GB2312").css(".NewsContent").to_s
       end
     end
-    save_article(2 ,content: content)
+    save_article(2 ,content: content, source: '中国融资租赁资源网')
   end
 end

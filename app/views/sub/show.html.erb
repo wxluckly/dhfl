@@ -10,7 +10,7 @@
     </div>
     <div class="wenzhang info">
       发布时间: <%= @article.created_at.strftime("%Y-%m-%d")%>
-      <span>文章来源: 互联网</span>
+      <span>文章来源:  <%= @article.source || '互联网' %></span>
     </div>
 
     <div class="wenzhang content">

@@ -15,6 +15,6 @@ class Crawler::Article::NetEase < Crawler::Article
 
   def get_content
     content = Nokogiri::HTML(open(url),nil,"GB2312").css("#endText p")[0..-2].to_s
-    save_article(2 ,content: content)
+    save_article(2 ,content: content, source: '网易财经')
   end
 end
