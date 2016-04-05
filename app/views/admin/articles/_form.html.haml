@@ -1,0 +1,24 @@
+= form_for ['admin', @article] do |f|
+  - if @article.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@article.errors.count, "error")
+        prohibited
+        this article from being saved:
+      %ul
+        - @article.errors.full_messages.each do |msg|
+          %li= msg
+  %p
+    = f.label :title
+    %br/
+    = f.text_field :title
+    %br/
+  = f.hidden_field :category_id, value: params[:category_id]
+  %p
+    = f.label :'输入内容'
+    %br/
+    = f.kindeditor :content, :owner_id => @article.id,input_html: {window_onload: true, filterMode: false}
+  %p
+    = f.select(:category_id,category_list, :selected => params[:category_id])
+  %p
+    = f.submit

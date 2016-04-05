@@ -1,0 +1,31 @@
+.row
+  .col-xs-6
+    = select_tag :category, options_for_select(category_list, params[:category_id]), style: "margin-left: 20px; width: 100px", class: "form-control pull-left"
+  .col-xs-6.pull-right
+    = link_to '新增', new_admin_article_path(category_id: params[:category_id]), class: 'pull-right btn btn-warning','data-no-turbolink' => true
+    = link_to '爬虫', crawler_admin_articles_path, class: 'pull-right btn btn-info', style: 'margin-right: 20px;'
+%br
+
+.span12
+  %table.table.table-bordered
+    %thead
+      %tr
+        %th 标题
+        %th 时间
+        %th 操作
+    = will_paginate @notices, previous_label: '上一页', next_label: '下一页',renderer: BootstrapPagination::Rails
+    %tbody
+      - @articles.each do |article|
+        %tr
+          %td= article.title
+          %td= article.created_at
+          %td
+            = link_to '编辑',edit_admin_article_path(article), 'data-no-turbolink' => true
+            = link_to '删除', admin_article_path(article),method: :delete, data: { confirm: '确定删除文章么？' }
+
+:javascript
+  $(function(){
+    $("#category").change(function(){
+      window.location.href = '#{admin_articles_path}?category_id=' + $("#category").val();
+    })
+  })

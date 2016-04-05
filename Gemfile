@@ -4,6 +4,7 @@ source 'https://ruby.taobao.org'
 gem 'redis-objects'
 gem 'simple_form'
 gem 'bootstrap-sass'
+gem 'devise-bootstrap-views'
 
 gem 'nokogiri'
 gem 'annotate'

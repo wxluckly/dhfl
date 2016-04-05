@@ -1,0 +1,9 @@
+= simple_form_for([:admin, @user]) do |f|
+  = f.error_notification
+  .form-inputs
+    = f.input :email, label: '邮箱*'
+    = f.input :password, autocomplete: "off", required: false, label: '新密码*'
+    = f.input :password_confirmation, required: false, label: '确认新密码*'
+    = f.input :is_admin, label: '是否管理员'
+  .form-actions
+    = f.button :submit, "新建", class: 'btn btn-success pull-right'
