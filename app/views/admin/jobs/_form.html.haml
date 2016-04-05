@@ -1,0 +1,25 @@
+= form_for ['admin', @job], html: {class: "bs-example bs-example-form"} do |f|
+  - if @job.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@job.errors.count, "error")
+        prohibited
+        this job from being saved:
+      %ul
+        - @job.errors.full_messages.each do |msg|
+          %li= msg
+  %p
+  .input-group
+    %span.input-group-addon
+      标题
+    = f.text_field :name, required: false, autofocus: true, class: "form-control"
+  %br
+  %p
+    = f.label '招聘内容'
+    %br
+    = f.kindeditor :content ,input_html: {window_onload: true, filterMode: false}
+  = f.label '排序位置(正序)'
+  = f.text_field :position
+  %br
+  %p
+    = f.submit '保存'

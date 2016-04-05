@@ -5,7 +5,7 @@
     %title= content_for?(:title) ? yield(:title) : 'DHFL'
     %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'DHFL'}"}
 
-    = stylesheet_link_tag    'admin/application', 'data-turbolinks-track' => true, media: 'all'
+    = stylesheet_link_tag    'admin/application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'admin/application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body

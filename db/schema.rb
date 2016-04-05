@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160405044001) do
+ActiveRecord::Schema.define(version: 20160405083122) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -60,6 +60,15 @@ ActiveRecord::Schema.define(version: 20160405044001) do
   end
 
   add_index "crawler_articles", ["article_id"], name: "index_crawler_articles_on_article_id", using: :btree
+
+  create_table "jobs", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.text     "content",    limit: 65535
+    t.integer  "position",   limit: 4,     default: 128
+    t.boolean  "is_valid",   limit: 1,     default: true
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "",    null: false

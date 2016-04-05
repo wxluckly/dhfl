@@ -53,42 +53,26 @@
   <div class="path">
     您现在的位置:首页>人才招聘
   </div>
-
-  <div class="title">
-    <h3>
-      <div class="oringe"></div>
-      出纳
-    </h3>
-  </div>
-  <dl>
-    <dt>职位要求：</dt>
-    <dd>1) 性格开朗，工作谨慎细心，有条理性，良好的人际沟通、协调能力，团队意识强，保密性强。诚实可靠，责任心强。</dd>
-    <dd>2) 专业：经济类专业，工作经验不限。</dd>
-    <dd>3) 熟悉会计操作、银行现金业务流程，熟练使用各种办公软件、财务软件，具备优秀的接待公关礼仪。</dd>
-  </dl>
-  <dl>
-    <dt>工作职责：</dt>
-    <dd>1) 协助会计做好各种账务处理工作；</dd>
-    <dd>2) 办理公司有关税款的申报及缴纳；</dd>
-    <dd>3) 完成上级领导交办的其它工作。</dd>
-  </dl>
-  <div class="title">
-    <h3>
-      <div class="oringe"></div>
-      前台
-    </h3>
-  </div>
-  <dl>
-    <dt>职位要求：</dt>
-    <dd>1) 熟练使用 办公软件；</dd>
-    <dd>2) 普通话标准流利，有良好的沟通能力，工作认真细致、积极主动，有良好的服务意识；</dd>
-    <dd>3) 有相关行政工作经验者优先。</dd>
-  </dl>
-  <dl>
-    <dt>工作职责：</dt>
-    <dd>1) 负责公司日常接待， 协助公司日常行政事务；</dd>
-    <dd>2) 完成上级领导交办的其它工作。</dd>
-  </dl>
+  <% @jobs.each do |job| %>
+    <div class="title">
+      <h3>
+        <div class="oringe"></div>
+        <%= job.name%>
+      </h3>
+    </div>
+    <dl>
+      <%=sanitize job.content%>
+    </dl>
+  <% end %>
+  <% if @jobs.blank? %>
+    <div class="title">
+      <h3>
+        <div class="oringe"></div>
+        暂无
+      </h3>
+    </div>
+  <% end %>
+  <br>
   <dl>
     <dt>联系我们：</dt>
     <dd>发送简历至邮箱：nnli@dinghuifl.com</dd>

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       get :crawler, on: :collection
     end
     resources :users
+    resources :jobs
   end
 
 end

@@ -1,0 +1,22 @@
+.row
+	.col-xs-4.vertical-center
+		.panel.panel-success
+			.panel-heading
+				%h4.panel-title 登陆
+			.panel-body
+				= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "bs-example bs-example-form"}) do |f|
+					.input-group
+						%span.input-group-addon
+							邮箱
+						= f.text_field :email, required: false, autofocus: true, class: "form-control"
+					%br
+					.input-group
+						%span.input-group-addon
+							密码
+						= f.password_field :password, required: false, autofocus: true, class: "form-control"
+					%br
+					.col-xs-6
+						= f.input :remember_me, as: :boolean, label: '保持登陆' if devise_mapping.rememberable?
+						.form-actions
+							= f.button :submit, "登陆"
+				-# = render "devise/shared/links"

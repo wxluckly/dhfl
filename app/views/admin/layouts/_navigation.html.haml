@@ -8,7 +8,10 @@
         %ul.nav.navbar-nav
           %li{class: current_page?(admin_articles_path) ? 'active' : ''}
             = link_to '文章管理', admin_articles_path
+          %li{class: current_page?(admin_jobs_path) ? 'active' : ''}
+            = link_to '招聘管理', admin_jobs_path
           %li{class: current_page?(admin_users_path) ? 'active' : ''}
             = link_to '管理员管理', admin_users_path
-          %li{class: current_page?(edit_admin_user_path(current_user)) ? 'active' : ''}
-            = link_to '账号管理', edit_admin_user_path(current_user)
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            = link_to '登出', "/users/sign_out", method: :delete

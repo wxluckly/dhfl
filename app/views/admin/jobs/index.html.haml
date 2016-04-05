@@ -1,0 +1,29 @@
+.col-xs-6.pull-right
+  = link_to '新增', new_admin_job_path, class: 'btn btn-success pull-right', 'data-no-turbolink' => true
+.clearfix
+%br
+  .table-responsive
+    %table.table.table-striped
+      %thead
+        %tr
+          %th
+          %th 标题
+          %th 排序位置(越小越靠前)
+          %th 是否生效
+          %th
+      %tbody
+        - @jobs.each do |job|
+          %tr
+            %td
+              %a{ 'data-method' => 'put', :href => admin_job_path(job, type: :reorder) }
+                %span.glyphicon.glyphicon-arrow-up
+            %td= job.name
+            %td= job.position
+            %td
+              - if job.is_valid
+                %span.label.label-success 是
+              - else
+                %span.label.label-danger 否
+            %td
+              = link_to '编辑',edit_admin_job_path(job), 'data-no-turbolink' => true
+              = link_to '删除', admin_job_path(job),method: :delete, data: { confirm: '确定删除么？' }

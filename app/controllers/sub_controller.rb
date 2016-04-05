@@ -20,4 +20,8 @@ class SubController < ApplicationController
     @article = Article.find(params[:id])
   end
 
+  def jobs
+    @jobs = Job.all
+  end
+
 end
