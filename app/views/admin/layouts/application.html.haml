@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
+    %title= content_for?(:title) ? yield(:title) : 'DHFL'
+    %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'DHFL'}"}
+
+    = stylesheet_link_tag    'admin/application', 'data-turbolinks-track' => true, media: 'all'
+    = javascript_include_tag 'admin/application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    %header
+      = render 'admin/layouts/navigation'
+    %main{:role => "main"}
+      .container
+        = render 'admin/layouts/messages'
+        = yield

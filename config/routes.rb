@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :articles do
       get :crawler, on: :collection
     end
-    resources :categories
+    resources :users
   end
 
 end

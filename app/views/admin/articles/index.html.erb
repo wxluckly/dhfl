@@ -1,6 +1,5 @@
-<div class='container'>
-<div class="row">
-  <div class="span3 align-down" style="margin-top: 25px;">
+
+  <div class="col-xs-6" style="margin-top: 25px;">
     <%= select_tag :category, options_for_select(category_list, params[:category_id]), style: "margin-left: 20px;"%>
   </div>
 
@@ -23,8 +22,8 @@
 
         <% @articles.each do |article| %>
         <tr>
-        <td><%=article.title%></td>
-        <td><%=article.created_at + 8.hours%></td>
+        <td><%=article.title %></td>
+        <td><%=article.created_at %></td>
         <td>
           <%= link_to '编辑',edit_admin_article_path(article), 'data-no-turbolink' => true %>
           <%= link_to '删除', admin_article_path(article),method: :delete, data: { confirm: '确定删除文章么？' } %>
@@ -35,8 +34,6 @@
       </tbody>
     </table>
   </div>
-</div>
-</div>
 
 <script>
   $(function(){

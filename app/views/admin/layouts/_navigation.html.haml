@@ -1,0 +1,14 @@
+- if user_signed_in? and current_user.is_admin
+  %nav.navbar.navbar-default.navbar-fixed-top
+    .container
+      .navbar-header
+        %a.navbar-brand DHFL
+        
+      .collapse.navbar-collapse
+        %ul.nav.navbar-nav
+          %li{class: current_page?(admin_articles_path) ? 'active' : ''}
+            = link_to '文章管理', admin_articles_path
+          %li{class: current_page?(admin_users_path) ? 'active' : ''}
+            = link_to '管理员管理', admin_users_path
+          %li{class: current_page?(edit_admin_user_path(current_user)) ? 'active' : ''}
+            = link_to '账号管理', edit_admin_user_path(current_user)
