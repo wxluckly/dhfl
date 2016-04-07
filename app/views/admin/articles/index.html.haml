@@ -13,7 +13,7 @@
         %th 标题
         %th 时间
         %th 操作
-    = will_paginate @notices, previous_label: '上一页', next_label: '下一页',renderer: BootstrapPagination::Rails
+    = will_paginate @notices, previous_label: '上一页', next_label: '下一页'#,renderer: BootstrapPagination::Rails
     %tbody
       - @articles.each do |article|
         %tr

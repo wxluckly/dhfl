@@ -9,7 +9,7 @@ gem 'devise-bootstrap-views'
 gem 'nokogiri'
 gem 'annotate'
 #翻页
-gem 'will_paginate-bootstrap', '0.2.5'
+gem 'will_paginate-bootstrap'
 gem 'will_paginate'
 #编辑器
 gem 'rails_kindeditor'
